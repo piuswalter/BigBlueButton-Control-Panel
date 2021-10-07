@@ -9,7 +9,7 @@ The use of BBBCP is simple. To use BBBCP with a running BigBlueButton instance, 
 const script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
 document.body.appendChild(script);
-$.getScript('https://piuswalter.github.io/BigBlueButton-Control-Panel/dist/BBBCP.js');
+$.getScript('https://piuswalter.github.io/BigBlueButton-Control-Panel/dist/bbbcp.js');
 ```
 
 Afterwards all functions are available.
