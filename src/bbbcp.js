@@ -8,6 +8,7 @@ y = 0,
 mousedown = false;
 var timeoutID = null;
 var emojiID = 0;
+var statusTimeout = 30;
 
 mover.addEventListener('mousedown', function (e) {
 	mousedown = true;
@@ -31,9 +32,36 @@ wrapper.addEventListener('mousemove', function (e) {
 }, true);
 
 function setStatus(status) {
+	if (statusTimeout > 0) {
+		timeoutID = setTimeout(function() {
+			clearStatus();
+		}, statusTimeout * 1000);
+	}
 	$('.userItemContents--C2UQJ').click();
 	$('li[data-test=setstatus]').click();
 	$('li[data-test=' + status + ']').click();
+}
+
+function clearStatus() {
+	if (timeoutID !== null) {
+		clearTimeout(timeoutID);
+		timeoutID = null;
+	}
+	$('li[data-test=clearStatus]').click();
+}
+
+function changeStatusTimeout() {
+	if (timeoutID !== null) {
+		clearTimeout(timeoutID);
+		timeoutID = null;
+	}
+	let timeoutInterval = $('#status-timeout').val();
+	statusTimeout = parseInt(timeoutInterval);
+	if (statusTimeout > 0) {
+		$('#status-timeout-span').text(timeoutInterval + 's');
+	} else {
+		$('#status-timeout-span').text('deactivated');
+	}
 }
 
 function activateDarkMode() {

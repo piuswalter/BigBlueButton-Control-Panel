@@ -25,6 +25,10 @@ If you like to use the Dark Mode in BBBCP just click the big upper label with 'B
 
 To close BBBCP just click the '&times;' in the upper right corner.
 
+## Timeout function
+
+In addition, BBBCP has a timeout function that can be activated to automatically remove a set status.
+
 ## Error or bug found
 
 Then open an issue or make a pull request. Thank you!

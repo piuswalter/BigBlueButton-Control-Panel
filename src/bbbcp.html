@@ -38,7 +38,7 @@
 	</div>
 	<table style="margin:35px auto 10px;">
 		<tr style="background-color:#fff;">
-			<td>
+			<td colspan="2">
 				<p style="margin-bottom:5px;">Set Status</p>
 				<button onclick="setStatus(\'away\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-time"></i>
@@ -80,9 +80,13 @@
 		<tr style="background-color:#fff;">
 			<td>
 				<p style="margin-bottom:5px;">Clear Status</p>
-				<button class="margin-bottom:10px;" onclick="$(\'li[data-test=clearStatus]\').click();">
+				<button class="margin-bottom:10px;" onclick="clearStatus();">
 					<i class="itemIcon--Z207zn1 icon-bbb-clear_status"></i>
 				</button>
+			</td>
+			<td>
+				<p style="margin-bottom:5px;">Status Timeout (<span id="status-timeout-span">30s</span>)</p>
+				<input type="range" min="0" max="60" value="10" id="status-timeout" oninput="changeStatusTimeout();" />
 			</td>
 		</tr>
 	</table>
