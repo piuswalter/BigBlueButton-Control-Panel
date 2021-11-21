@@ -73,6 +73,18 @@ async function toggleWebcamOption() {
 	document.querySelector('[aria-label="Schließen Verbindungsstatus"]').click();
 }
 
+function toggleBBBCPSize(option) {
+	if (option === 'expand') {
+		$('#pw-control-panel').height('180px');
+		$('.not-expanded-tr').addClass('expanded-tr');
+		$('.expanded-tr').removeClass('not-expanded-tr');
+	} else {
+		$('#pw-control-panel').height('180px');
+		$('.expanded-tr').addClass('not-expanded-tr');
+		$('.not-expanded-tr').removeClass('expanded-tr');
+	}
+}
+
 function activateDarkMode() {
 	$('#pw-control-panel').css('color', 'white');
 	$('#pw-control-panel').css('background-color', '#0f0f0f');
