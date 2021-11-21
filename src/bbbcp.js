@@ -86,7 +86,7 @@ async function toggleWebcamOption() {
 
 function toggleBBBCPSize(option) {
 	if (option === 'expand') {
-		$('#pw-control-panel').height('250px');
+		$('#pw-control-panel').height('340px');
 		$('.not-expanded-tr').addClass('expanded-tr');
 		$('.expanded-tr').removeClass('not-expanded-tr');
 	} else {
