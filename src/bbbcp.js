@@ -60,8 +60,17 @@ function changeStatusTimeout() {
 	if (statusTimeout > 0) {
 		$('#status-timeout-span').text(timeoutInterval + 's');
 	} else {
-		$('#status-timeout-span').text('deactivated');
+		$('#status-timeout-span').text('deact.');
 	}
+}
+
+async function toggleWebcamOption() {
+	var delay = ms => new Promise(res => setTimeout(res, ms));
+	document.querySelector('[aria-label="Verbindungsstatus der Teilnehmer anzeigen"]').click();
+	await delay(100);
+	document.querySelector('[aria-label="Verbindungsstatus"] div div').querySelectorAll('div')[10].click();
+	await delay(100);
+	document.querySelector('[aria-label="Schließen Verbindungsstatus"]').click();
 }
 
 function activateDarkMode() {

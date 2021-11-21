@@ -1,4 +1,4 @@
-<div id="pw-control-panel" style="cursor:default;pointer-events:auto;padding:10px;width:360px;height:215px;position:absolute;right:10px;bottom:75px;background-color:#f8f8f8;z-index:9997;">
+<div id="pw-control-panel" style="cursor:default;pointer-events:auto;padding:10px;width:360px;height:200px;position:absolute;right:10px;bottom:75px;background-color:#f8f8f8;z-index:9997;">
 	<style>
 		.pw-button {
 			background-color: white;
@@ -38,55 +38,59 @@
 	</div>
 	<table style="margin:35px auto 10px;">
 		<tr style="background-color:#fff;">
-			<td colspan="2">
-				<p style="margin-bottom:5px;">Set Status</p>
-				<button onclick="setStatus(\'away\');">
+			<td>
+				<p style="margin:0;">Set Status / Clear Status</p>
+				<button title="Set Status away" onclick="setStatus(\'away\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-time"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'raiseHand\');">
+				<button title="Set Status raiseHand" onclick="setStatus(\'raiseHand\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-hand"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'neutral\');">
+				<button title="Set Status neutral" onclick="setStatus(\'neutral\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-undecided"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'confused\');">
+				<button title="Set Status confused" onclick="setStatus(\'confused\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-confused"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'sad\');">
+				<button title="Set Status sad" onclick="setStatus(\'sad\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-sad"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'happy\');">
+				<button title="Set Status happy" onclick="setStatus(\'happy\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-happy"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'applause\');">
+				<button title="Set Status applause" onclick="setStatus(\'applause\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-applause"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'thumbsUp\');">
+				<button title="Set Status thumbsUp" onclick="setStatus(\'thumbsUp\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-thumbs_up"></i>
 				</button>
 				<span> </span>
-				<button onclick="setStatus(\'thumbsDown\');">
+				<button title="Set Status thumbsDown" onclick="setStatus(\'thumbsDown\');">
 					<i class="itemIcon--Z207zn1 icon-bbb-thumbs_down"></i>
 				</button>
-			</td>
-		</tr>
-		<tr style="background-color:#fff;">
-			<td>
-				<p style="margin-bottom:5px;">Clear Status</p>
-				<button class="margin-bottom:10px;" onclick="clearStatus();">
+				<span> </span>
+				<button title="Clear Status" onclick="clearStatus();">
 					<i class="itemIcon--Z207zn1 icon-bbb-clear_status"></i>
 				</button>
 			</td>
 			<td>
-				<p style="margin-bottom:5px;">Status Timeout (<span id="status-timeout-span">30s</span>)</p>
-				<input type="range" min="0" max="60" value="10" id="status-timeout" oninput="changeStatusTimeout();" />
+				<p style="margin:0;">Status Timeout (<span id="status-timeout-span">30s</span>)</p>
+				<input style="width:150px;" type="range" min="0" max="60" value="10" id="status-timeout" oninput="changeStatusTimeout();" />
+			</td>
+		</tr>
+		<tr style="background-color:#fff;">
+			<td colspan="2">
+				<p style="margin:0;">Toggle Presentator Webcam</p>
+				<button onclick="toggleWebcamOption();">
+					<i style="width:14px;height:14px;" class="icon--1RgJF icon-bbb-network"></i>
+				</button>
 			</td>
 		</tr>
 	</table>
