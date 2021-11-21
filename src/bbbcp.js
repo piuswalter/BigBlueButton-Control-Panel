@@ -64,6 +64,17 @@ function changeStatusTimeout() {
 	}
 }
 
+function sendMessageToChat(message) {
+	/* @tjarbo here is your 🍺! */
+	const triggerReact = new Event('input', { bubbles: true});
+	const bbbInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, "value").set;
+	const bbbChatInput = document.getElementById('message-input');
+	const bbbChatButton = document.querySelector('[aria-label="Nachricht senden"]');
+	bbbInputValueSetter.call(bbbChatInput, message);
+	bbbChatInput.dispatchEvent(triggerReact);
+	bbbChatButton.click();
+}
+
 async function toggleWebcamOption() {
 	var delay = ms => new Promise(res => setTimeout(res, ms));
 	document.querySelector('[aria-label="Verbindungsstatus der Teilnehmer anzeigen"]').click();
@@ -75,7 +86,7 @@ async function toggleWebcamOption() {
 
 function toggleBBBCPSize(option) {
 	if (option === 'expand') {
-		$('#pw-control-panel').height('180px');
+		$('#pw-control-panel').height('250px');
 		$('.not-expanded-tr').addClass('expanded-tr');
 		$('.expanded-tr').removeClass('not-expanded-tr');
 	} else {
